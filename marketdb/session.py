@@ -2,6 +2,7 @@ from dotenv import load_dotenv
 from os import getenv
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
+from sqlalchemy.ext.declarative import declarative_base
 
 def get_session(env_path='.env'):
     load_dotenv(dotenv_path=env_path)
@@ -15,3 +16,5 @@ def get_session(env_path='.env'):
     engine = create_engine(url)
     Session = sessionmaker(bind=engine)
     return Session
+
+Base = declarative_base()
