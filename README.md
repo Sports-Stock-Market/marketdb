@@ -1,5 +1,7 @@
 # marketdb
 
+A Python database interface to support the sports stock market website
+
 ## Developer Notes
 
 - To install the required dependencies and build the `marketdb` package, run ```python setup.py install```.
