@@ -1,4 +1,4 @@
-from setuptools import setup
+from setuptools import setup, find_packages
 
 with open('requirements.txt') as reqs_f:
     reqs = reqs_f.read().splitlines()
@@ -9,6 +9,6 @@ setup(
     description='DB interface for sports stock market',
     author='Vedant Pathak',
     author_email='vpathak@uchicago.edu',
-    packages=['marketdb'],
+    packages=find_packages(),
     install_requires=reqs
 )
