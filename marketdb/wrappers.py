@@ -40,6 +40,23 @@ def new_nbaPlayer(session, first_name='', last_name='', games_played=0,
     session.commit()
     return newplayer
 
+def new_nflTeam(session, city='', name='', wins=0, losses=0, ties=0, wins_lastYear=0,
+                losses_lastYear=0, ties_lastYear=0, playoff_odds=0.0, team_rating=0.0,
+                offense_rating=0.0, qb_rating=0.0, offensive_pointsFor=0, yards_for=0,
+                touchdowns_for=0, offensive_redzone_eff=0.0, defense_rating=0.0,
+                yards_against=0, points_against=0, touchdowns_against=0, sacks=0,
+                interceptions=0, defensive_redzone_eff=0.0, defensive_pointsFor=0,
+                defensive_eff=0):
+    newteam = NFLTeam(city, name, wins, losses, ties, wins_lastYear, losses_lastYear,
+                      ties_lastYear, playoff_odds, team_rating, offense_rating,
+                      qb_rating, offensive_pointsFor, yards_for, touchdowns_for,
+                      offensive_redzone_eff, defense_rating, yards_against, points_against,
+                      touchdowns_against, sacks, interceptions, defensive_redzone_eff,
+                      defensive_pointsFor, defensive_eff)
+    session.add(newteam)
+    session.commit()
+    return newteam
+
 def get_nbaTeam(session, team_name, city_name):
     return session.query(NBATeam) \
                   .filter(NBATeam.team_name == tname and \
