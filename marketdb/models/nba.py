@@ -1,6 +1,6 @@
 from marketdb.session import Base
 from sqlalchemy import Column, Text, Integer, Float, ForeignKey
-from sqlalchemy.orm import relationship, backref
+from sqlalchemy.orm import relationship 
 
 class NBATeam(Base):
 
@@ -31,7 +31,7 @@ class NBATeam(Base):
     steals = Column(Integer)
     blocks = Column(Integer)
 
-    players = relationship("NBAPlayer")
+    players = relationship('NBAPlayer')
 
     def __init__(self, city, team_name, wins, losses, wins_lastYear,
                  losses_lastYear, conference_standings, playoff_odds,
@@ -71,7 +71,7 @@ class NBAPlayer(Base):
 
     id = Column(Integer, primary_key=True)
     team_id = Column(Integer, ForeignKey('nba_teams.id'))
-    team = relationship("NBATeam")
+    team = relationship('NBATeam')
 
     first_name = Column(Text)
     last_name = Column(Text)

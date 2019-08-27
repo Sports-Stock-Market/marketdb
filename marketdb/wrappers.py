@@ -1,5 +1,5 @@
 from marketdb.session import Base
-from marketdb.models.nba import NBATeam, NBAPlayer
+from marketdb.models.nba import NBATeam, NBAPlayer, NFLTeam, NFLPlayer
 
 def initdb(engine):
     Base.metadata.create_all(engine)
@@ -57,6 +57,32 @@ def new_nflTeam(session, city='', name='', wins=0, losses=0, ties=0, wins_lastYe
     session.commit()
     return newteam
 
+def new_nflPlayer(session, position=0, first_name='', last_name='', games_played=0,
+                  games_started=0, passing_completions=0, pass_attempts=0, passing_yards=0,
+                  passing_touchdowns=0, interceptions_against=0, sacks_against=0,
+                  fumbles_against=0, qbr=0.0, rushing_attempts=0, rushing_yards=0, rushing_touchdowns=0,
+                  receiving_targets=0, receptions=0, receiving_yards=0, receiving_touchdowns=0,
+                  interceptions_for=0, pick_sixes=0, forced_fumbles_for=0, fumble_recovery_for=0,
+                  fumble_sixes=0, passes_defended=0, sacks_for=0, total_tackles=0, solo_tackles=0,
+                  tackles_for_loss=0, qb_hits=0, fg_attempted=0, fg_made=0, longfg_attempted=0,
+                  longfg_made=0, xp_attempted=0, xp_made=0, punt_attempts=0, punt_yards=0,
+                  punt_returns=0, punt_return_yards=0, punt_return_touchdowns=0, kick_returns=0,
+                  kick_return_yards=0, kick_return_touchdowns=0, team=None):
+    newplayer = NFLPlayer(position, first_name, last_name, games_played, games_started,
+                          passing_completions, pass_attempts, passing_yards, passing_touchdowns,
+                          interceptions_against, sacks_against, fumbles_against, qbr,
+                          rushing_attempts, rushing_yards, rushing_touchdowns, receiving_targets,
+                          receptions, receiving_yards, receiving_touchdowns, interceptions_for,
+                          pick_sixes, forced_fumbles_for, fumble_recovery_for, fumble_sixes,
+                          passes_defended, sacks_for, total_tackles, solo_tackles, tackles_for_loss,
+                          qb_hits, fg_attempted, fg_made, longfg_attempted, longfg_made, xp_attempted,
+                          xp_made, punt_attempts, punt_yards, punt_returns, punt_return_yards,
+                          punt_return_touchdowns, kick_returns, kick_return_yards, kick_return_touchdowns,
+                          team)
+    session.add(newplayer)
+    session.commit()
+    return newplayer
+
 def get_nbaTeam(session, team_name, city_name):
     return session.query(NBATeam) \
                   .filter(NBATeam.team_name == tname and \
@@ -70,4 +96,19 @@ def get_nbaPlayer(session, first_name, last_name):
     return session.query(NBAPlayer) \
                   .filter(NBAPlayer.first_name == first_name and \
                           NBAPlayer.last_name == last_name) \
+                  .first()
+
+def get_nflTeam(session, team_name, city_name):
+    return session.query(NFLTeam) \
+                  .filter(NFLTeam.team_name == tname and \
+                          NFLTeam.city_name == cname) \
+                  .first()
+
+def get_players_on_nflTeam(session, team_name, city_name):
+    return get_nflTeam(session, team_name, city_name).players
+
+def get_nflPlayer(session, first_name, last_name):
+    return session.query(NFLPlayer) \
+                  .filter(NFLPlayer.first_name == first_name and \
+                          NFLPlayer.last_name == last_name) \
                   .first()
