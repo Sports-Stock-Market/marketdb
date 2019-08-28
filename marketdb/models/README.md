@@ -40,3 +40,28 @@ The `NBATeam` model has the following fields:
 - `plus_minus :: Float`
 - `steals :: Int`
 - `blocks :: Int`
+
+## NBAPlayer
+
+The `NBAPlayer` model has the following fields:
+- `first_name :: String`
+- `last_name :: String`
+- `games_played :: Int`
+- `games_started :: Int`
+- `points :: Int`
+- `field_goals_attemped :: Int`
+- `field_goals_made :: Int`
+- `threePt_attempted :: Int`
+- `threePt_made :: Int`
+- `freeThrows_attempted :: Int`
+- `freeThrows_made :: Int`
+- `assists :: Int`
+- `turnovers :: Int`
+- `def _rebounds :: Int`
+- `off_rebounds :: Int`
+- `plus_minus :: Float`
+- `min_per_game :: Float`
+- `win_share :: Int`
+- `true_shooting_pct :: Float`
+- `fouls :: Int`
+- `blocks :: Int`
