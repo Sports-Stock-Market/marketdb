@@ -1,5 +1,6 @@
 from marketdb.session import Base
-from marketdb.models.nba import NBATeam, NBAPlayer, NFLTeam, NFLPlayer
+from marketdb.models.nba import NBATeam, NBAPlayer
+from marketdb.models.nfl import NFLTeam, NFLPlayer
 
 def initdb(engine):
     Base.metadata.create_all(engine)
@@ -40,14 +41,14 @@ def new_nbaPlayer(session, first_name='', last_name='', games_played=0,
     session.commit()
     return newplayer
 
-def new_nflTeam(session, city='', name='', wins=0, losses=0, ties=0, wins_lastYear=0,
+def new_nflTeam(session, city='', team_name='', wins=0, losses=0, ties=0, wins_lastYear=0,
                 losses_lastYear=0, ties_lastYear=0, playoff_odds=0.0, team_rating=0.0,
                 offense_rating=0.0, qb_rating=0.0, offensive_pointsFor=0, yards_for=0,
                 touchdowns_for=0, offensive_redzone_eff=0.0, defense_rating=0.0,
                 yards_against=0, points_against=0, touchdowns_against=0, sacks=0,
                 interceptions=0, defensive_redzone_eff=0.0, defensive_pointsFor=0,
                 defensive_eff=0):
-    newteam = NFLTeam(city, name, wins, losses, ties, wins_lastYear, losses_lastYear,
+    newteam = NFLTeam(city, team_name, wins, losses, ties, wins_lastYear, losses_lastYear,
                       ties_lastYear, playoff_odds, team_rating, offense_rating,
                       qb_rating, offensive_pointsFor, yards_for, touchdowns_for,
                       offensive_redzone_eff, defense_rating, yards_against, points_against,
@@ -83,7 +84,7 @@ def new_nflPlayer(session, position=0, first_name='', last_name='', games_played
     session.commit()
     return newplayer
 
-def get_nbaTeam(session, team_name, city_name):
+def get_nbaTeam(session, tname, cname):
     return session.query(NBATeam) \
                   .filter(NBATeam.team_name == tname and \
                           NBATeam.city_name == cname) \
@@ -98,7 +99,7 @@ def get_nbaPlayer(session, first_name, last_name):
                           NBAPlayer.last_name == last_name) \
                   .first()
 
-def get_nflTeam(session, team_name, city_name):
+def get_nflTeam(session, tname, cname):
     return session.query(NFLTeam) \
                   .filter(NFLTeam.team_name == tname and \
                           NFLTeam.city_name == cname) \

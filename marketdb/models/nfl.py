@@ -36,14 +36,14 @@ class NFLTeam(Base):
 
     players = relationship('NFLPlayer')
 
-    def __init__(self, city, name, wins, losses, ties, wins_lastYear, losses_lastYear,
+    def __init__(self, city, team_name, wins, losses, ties, wins_lastYear, losses_lastYear,
                  ties_lastYear, playoff_odds, team_rating, offense_rating,
                  qb_rating, offensive_pointsFor, yards_for, touchdowns_for,
                  offensive_redzone_eff, defense_rating, yards_against, points_against,
                  touchdowns_against, sacks, interceptions, defensive_redzone_eff,
                  defensive_pointsFor, defensive_eff):
         self.city = city
-        self.name = name
+        self.team_name = team_name
         self.wins = wins
         self.losses = losses
         self.ties = ties
@@ -169,7 +169,7 @@ class NFLPlayer(Base):
         self.fg_made = fg_made
         self.longfg_attempted = longfg_attempted
         self.longfg_made = longfg_made
-        self.self.xp_attempted = xp_attempted
+        self.xp_attempted = xp_attempted
         self.xp_made = xp_made
         self.punt_attempts = punt_attempts
         self.punt_yards = punt_yards
