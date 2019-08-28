@@ -2,6 +2,10 @@
 
 A Python database interface to support the sports stock market website
 
+## model documentation
+
+For reference on what variables one can access from each model, please refer to the[(models README](https://github.com/Sports-Stock-Market/marketdb/blob/master/marketdb/models/README.md)
+
 ## Developer Notes
 
 - To install the required dependencies and build the `marketdb` package, run ```python setup.py install```.
