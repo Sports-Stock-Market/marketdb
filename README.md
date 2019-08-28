@@ -4,7 +4,7 @@ A Python database interface to support the sports stock market website
 
 ## model documentation
 
-For reference on what variables one can access from each model, please refer to the[(models README](https://github.com/Sports-Stock-Market/marketdb/blob/master/marketdb/models/README.md)
+For reference on what variables one can access from each model, please refer to the[models README](https://github.com/Sports-Stock-Market/marketdb/blob/master/marketdb/models/README.md)
 
 ## Developer Notes
 

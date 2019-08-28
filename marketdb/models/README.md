@@ -41,7 +41,7 @@ The `NBATeam` model has the following fields:
 - `steals :: Int`
 - `blocks :: Int`
 
-## NBAPlayer
+### NBAPlayer
 
 The `NBAPlayer` model has the following fields:
 - `first_name :: String`
@@ -65,3 +65,33 @@ The `NBAPlayer` model has the following fields:
 - `true_shooting_pct :: Float`
 - `fouls :: Int`
 - `blocks :: Int`
+
+### NFLTeam
+
+The `NFLTeam` model has the following fields:
+- `city :: String`
+- `team_name :: String`
+- `wins :: Int`
+- `losses :: Int`
+- `wins_lastYear :: Int`
+- `losses_lastYear :: Int`
+- `ties_lastYear :: Int`
+- `playoff_odds :: Float`
+- `team_rating :: Float`
+- `offense_rating :: Float`
+- `qb_rating :: Float`
+- `offensive_pointsFor :: Int`
+- `yards_for :: Int`
+- `touchdowns_for :: Int`
+- `offensive_redzone_eff :: Float`
+- `defense_rating :: Float`
+- `yards_against :: Int`
+- `points_against :: Int`
+- `touchdowns_against :: Int`
+- `sacks :: Int`
+- `interceptions :: Int`
+- `defensive_redzome_eff :: Float`
+- `defensive_pointsFor :: Int`
+- `defensive_eff :: Float`
+
+### NFLPlayer
