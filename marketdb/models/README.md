@@ -44,6 +44,7 @@ The `NBATeam` model has the following fields:
 ### NBAPlayer
 
 The `NBAPlayer` model has the following fields:
+- `team :: NBATeam`
 - `first_name :: String`
 - `last_name :: String`
 - `games_played :: Int`
@@ -95,3 +96,51 @@ The `NFLTeam` model has the following fields:
 - `defensive_eff :: Float`
 
 ### NFLPlayer
+
+The `NFLPlayer` model has the following fields:
+- `team :: NFLTeam`
+- `position :: Int`
+- `first_name :: String`
+- `last_name :: String`
+- `games_played :: Int`
+- `games_started :: Int`
+- `passing_completions :: Int`
+- `pass_attempts :: Int`
+- `passing_yards :: Int`
+- `passing_touchdowns :: Int`
+- `interceptions_against :: Int`
+- `sacks_against :: Int`
+- `fumbles_against :: Int`
+- `qbr :: Float`
+- `rushing_attempts :: Int`
+- `rushing_yards :: Int`
+- `rushing_touchdowns :: Int`
+- `receiving_targets :: Int`
+- `receptions :: Int`
+- `receiving_yards :: Int`
+- `receiving_touchdowns :: Int`
+- `interceptions_for :: Int`
+- `pick_sixes :: Int`
+- `forces_fumbles_for :: Int`
+- `fumble_recovery_for :: Int`
+- `fumble_sixes :: Int`
+- `passes_defended :: Int`
+- `sacks_for :: Int`
+- `total_tackles :: Int`
+- `solo_tackles :: Int`
+- `tackles_for_loss :: Int`
+- `qb_hits :: Int`
+- `fg_attempted :: Int`
+- `fg_made :: Int`
+- `longfg_attempted :: Int`
+- `longfg_made :: Int`
+- `xp_attemped :: Int`
+- `xp_made :: Int`
+- `punt_attempts :: Int`
+- `punt_yards :: Int`
+- `punt_returns :: Int`
+- `punt_return_yards :: Int`
+- `punt_return_touchdowns :: Int`
+- `kick_returns :: Int`
+- `kick_return_yards :: Int`
+- `kick_return_touchdowns :: Int`
