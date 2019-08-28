@@ -91,7 +91,7 @@ The `NFLTeam` model has the following fields:
 - `touchdowns_against :: Int`
 - `sacks :: Int`
 - `interceptions :: Int`
-- `defensive_redzome_eff :: Float`
+- `defensive_redzone_eff :: Float`
 - `defensive_pointsFor :: Int`
 - `defensive_eff :: Float`
 
